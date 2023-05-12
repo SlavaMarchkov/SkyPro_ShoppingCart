@@ -24,12 +24,9 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public String add(String itemIDs) {
-        List<String> ids = List.of(itemIDs.split(","));
-        for (String id : ids) {
-            int itemID = Integer.parseInt(id);
-            cart.add(new Item(itemID));
-        }
+    public String addAll(List<Integer> items) {
+        cart.addAll(items);
         return "Item(s) added successfully";
     }
+
 }
